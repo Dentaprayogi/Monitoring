@@ -24,21 +24,24 @@ class UpdateKerjasamaRequest extends FormRequest
     public function rules()
     {
         return [
-            'nama_instansi'     => 'required',
-            'nomor_perusahaan'  => 'required',
-            'contact_person'    => 'required',
-            'jenis_kegiatan'    => 'required',
-            'manfaat'           => 'required',
-            'tgl_mulai'         => 'required|date|before:tgl_berakhir',
-            'tgl_berakhir'      => 'required|date',
-            'prodi'             => 'required',
-            'kategori'          => 'required',
-            'hard_file'         => 'required',
-            'implementasi'      => 'required',
-            'mou'               =>  'sometimes|nullable|mimes:docx,pdf',
-            'nomor_mou'         =>  'required',
+            'nomor_mou'=> 'required',
             'nomor_mou_old'     =>  'required',
-            'file_mou'          =>  'required'
+            'nomor_mou_instansi'=> 'required',
+            'nomor_instansi'=> 'required',
+            'email_instansi'=> 'required',
+            'alamat_instansi'=> 'required',
+            'nama_instansi'=> 'required',
+            'nama_contact_person'=> 'required',
+            'contact_person'=> 'required',
+            'jenis_kegiatan'=> 'required',
+            'manfaat'=> 'required',
+            'implementasi'=> 'required',
+            'prodi'=> 'required',
+            'kategori'=> 'required',
+            'mou' =>  'required|mimes:docx,pdf',
+            'hard_file'=> 'required',
+            'tgl_mulai'=> 'required|date|before:tgl_berakhir',
+            'tgl_berakhir'=> 'required|date',
         ];
     }
 }

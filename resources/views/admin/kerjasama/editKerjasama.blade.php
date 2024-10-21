@@ -26,6 +26,60 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="form-group">
+                                            <label for="exampleInputmou1">Nomor Mou Poliwangi</label>
+                                            <input type="hidden" name="nomor_mou_old"
+                                                value="{{ $kerjasama->nomor_mou }}">
+                                            <input type="hidden" name="file_mou" value="{{ $kerjasama->file_mou }}">
+                                            <input value="{{ $kerjasama->nomor_mou }}" type="text"
+                                                class="form-control @error('nomor_mou')
+                                                is-invalid
+                                            @enderror"
+                                                id="exampleInputmou1" name="nomor_mou" aria-describedby="mouHelp"
+                                                placeholder="Nomor Mou" value="{{ old('nomor_mou') }}">
+                                            @error('nomor_mou')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputinstansi1">Nomor Mou Instansi</label>
+                                            <input value="{{ $kerjasama->nomor_mou_instansi }}" type="text"
+                                                name="nomor_mou_instansi"
+                                                class="form-control  @error('nomor_mou_instansi')
+                                                is-invalid
+                                            @enderror"
+                                                id="exampleInputinstansi1" aria-describedby="instansiHelp"
+                                                placeholder="Masukkan Nomor Mou Instansi" value="{{ old('nomor_mou_instansi') }}">
+                                            @error('nomor_mou_instansi')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputinstansi1">Kriteria</label>
+                                            <input value="{{ $kerjasama->nomor_instansi }}" type="text"
+                                                name="nomor_instansi"
+                                                class="form-control  @error('nomor_instansi')
+                                                is-invalid
+                                            @enderror"
+                                                id="exampleInputinstansi1" aria-describedby="instansiHelp"
+                                                placeholder="Masukkan Nomor Instansi" value="{{ old('nomor_instansi') }}">
+                                            @error('nomor_instansi')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputinstansi1">Email Instansi</label>
+                                            <input value="{{ $kerjasama->email_instansi }}" type="text"
+                                                name="email_instansi"
+                                                class="form-control  @error('email_instansi')
+                                                is-invalid
+                                            @enderror"
+                                                id="exampleInputinstansi1" aria-describedby="instansiHelp"
+                                                placeholder="Masukkan Email Instansi" value="{{ old('email_instansi') }}">
+                                            @error('email_instansi')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
                                             <label for="exampleInputinstansi1">Nama Instansi</label>
                                             <input value="{{ $kerjasama->nama_instansi }}" type="text"
                                                 name="nama_instansi"
@@ -39,15 +93,28 @@
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputinstansi1">Nomor Perusahaan</label>
-                                            <input value="{{ $kerjasama->nomor_perusahaan }}" type="text"
-                                                name="nomor_perusahaan"
-                                                class="form-control  @error('nomor_perusahaan')
+                                            <label for="exampleInputinstansi1">Alamat Instansi</label>
+                                            <input value="{{ $kerjasama->alamat_instansi }}" type="text"
+                                                name="alamat_instansi"
+                                                class="form-control  @error('alamat_instansi')
                                                 is-invalid
                                             @enderror"
                                                 id="exampleInputinstansi1" aria-describedby="instansiHelp"
-                                                placeholder="Masukkan Nomor Perusahaan" value="{{ old('nomor_perusahaan') }}">
-                                            @error('nomor_perusahaan')
+                                                placeholder="Masukkan Alamat Instansi" value="{{ old('alamat_instansi') }}">
+                                            @error('alamat_instansi')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputinstansi1">Nama Contact Person</label>
+                                            <input value="{{ $kerjasama->nama_contact_person }}" type="text"
+                                                name="nama_contact_person"
+                                                class="form-control  @error('nama_contact_person')
+                                                is-invalid
+                                            @enderror"
+                                                id="exampleInputinstansi1" aria-describedby="instansiHelp"
+                                                placeholder="Masukkan Nama Contact Person" value="{{ old('nama_contact_person') }}">
+                                            @error('nama_contact_person')
                                                 <div class="alert alert-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
@@ -64,6 +131,8 @@
                                                 <div class="alert alert-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
+                                    </div>
+                                    <div class="col-6">
                                         <div class="form-group">
                                             <label for="exampleInputkegiatan1">Jenis Kegiatan</label>
                                             <input value="{{ $kerjasama->jenis_kegiatan }}" type="text"
@@ -99,41 +168,6 @@
                                                 <div class="alert alert-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <label for="exampleFormControldate1">Tanggal Mulai</label>
-                                                    <input value="{{ $kerjasama->tgl_mulai }}" type="date"
-                                                        name="tgl_mulai"
-                                                        class="form-control @error('tgl_mulai')
-                                                is-invalid
-                                            @enderror"
-                                                        id="exampleFormControldate1" value="{{ old('tgl_mulai') }}">
-                                                    @error('tgl_mulai')
-                                                        <div class="alert alert-danger">{{ $message }}</div>
-                                                    @enderror
-                                                </div>
-                                                <div class="col">
-                                                    <label for="exampleFormControldate2">Tanggal Berakhir</label>
-                                                    <input value="{{ $kerjasama->tgl_berakhir }}" type="date"
-                                                        name="tgl_berakhir"
-                                                        class="form-control @error('tgl_berakhir')
-                                                is-invalid
-                                            @enderror"
-                                                        id="exampleFormControldate2" value="{{ old('tgl_berakhir') }}">
-                                                    @error('tgl_berakhir')
-                                                        <div class="alert alert-danger">{{ $message }}</div>
-                                                    @enderror
-
-                                                </div>
-                                                {{-- <div class="col">
-                                                </div>
-                                                <div class="col">
-                                                </div> --}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
                                         <div class="form-group">
                                             <label for="prodi">Masukkan Prodi</label>
                                             <select
@@ -183,21 +217,6 @@
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputmou1">Nomor Mou</label>
-                                            <input type="hidden" name="nomor_mou_old"
-                                                value="{{ $kerjasama->nomor_mou }}">
-                                            <input type="hidden" name="file_mou" value="{{ $kerjasama->file_mou }}">
-                                            <input value="{{ $kerjasama->nomor_mou }}" type="text"
-                                                class="form-control @error('nomor_mou')
-                                                is-invalid
-                                            @enderror"
-                                                id="exampleInputmou1" name="nomor_mou" aria-describedby="mouHelp"
-                                                placeholder="Nomor Mou" value="{{ old('nomor_mou') }}">
-                                            @error('nomor_mou')
-                                                <div class="alert alert-danger">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-                                        <div class="form-group">
                                             <label for="hard_file">Hard File</label>
                                             <select
                                                 class="form-control @error('hard_file')
@@ -215,6 +234,39 @@
                                             @error('hard_file')
                                                 <div class="alert alert-danger">{{ $message }}</div>
                                             @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="exampleFormControldate1">Tanggal Mulai</label>
+                                                    <input value="{{ $kerjasama->tgl_mulai }}" type="date"
+                                                        name="tgl_mulai"
+                                                        class="form-control @error('tgl_mulai')
+                                                is-invalid
+                                            @enderror"
+                                                        id="exampleFormControldate1" value="{{ old('tgl_mulai') }}">
+                                                    @error('tgl_mulai')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+                                                <div class="col">
+                                                    <label for="exampleFormControldate2">Tanggal Berakhir</label>
+                                                    <input value="{{ $kerjasama->tgl_berakhir }}" type="date"
+                                                        name="tgl_berakhir"
+                                                        class="form-control @error('tgl_berakhir')
+                                                is-invalid
+                                            @enderror"
+                                                        id="exampleFormControldate2" value="{{ old('tgl_berakhir') }}">
+                                                    @error('tgl_berakhir')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
+
+                                                </div>
+                                                {{-- <div class="col">
+                                                </div>
+                                                <div class="col">
+                                                </div> --}}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title>
-        {{ $title }}
     </title>
 
     <!-- General CSS Files -->
@@ -124,7 +123,9 @@
                             </div>
                         </div>
                     </li> --}}
+                    @if(Auth::user()->role == 'admin')
                     @include('admin.notifikasi.notifikasi')
+                    @endif
                     <li class="dropdown"><a href="#" data-toggle="dropdown"
                             class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                             <img alt="image" src="{{ config('app.url') }}/assets/img/avatar/avatar-1.png"
@@ -183,6 +184,7 @@
                                 <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
                             </ul>
                         </li> --}}
+                        @if(Auth::user()->role == 'admin')
                         <li class="{{ request()->segment(1) == 'data-kerjasama' ? 'active' : '' }}"><a class="nav-link"
                                 href="/data-kerjasama"><i class="fas fa-table"></i>
                                 <span>Data Kerja
@@ -191,6 +193,24 @@
                                 class="nav-link" href="/tambah-kerja-sama"><i
                                     class="fas fa-plus-square"></i><span>Tambah
                                     Kerja Sama</span></a></li>
+
+                          <li class="{{ request()->segment(1) == 'tambah-Aktivitas' ? 'active' : '' }}"><a
+                                class="nav-link" href="/tambah-Aktivitas"><i
+                                    class="fas fa-plus-square"></i><span>Tambah
+                                    Aktivitas</span></a></li>
+                        @endif
+                         @if(Auth::user()->role == 'prodi')
+                         <li class="{{ request()->segment(1) == 'data-kerjasama' ? 'active' : '' }}"><a class="nav-link"
+                            href="/data-kerjasama"><i class="fas fa-table"></i>
+                            <span>Data Kerja
+                                Sama</span></a></li>
+                        @endif
+                        @if(Auth::user()->role == 'mitra')
+                         <li class="{{ request()->segment(1) == 'pengajuan-kerja-sama' ? 'active' : '' }}"><a class="nav-link"
+                            href="/pengajuan-kerja-sama"><i class="fas fa-table"></i>
+                            <span>Pengajuan Kerjasama</span></a></li>
+                        @endif
+                  
                         {{-- <li class="dropdown">
                             <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i>
                                 <span>Bootstrap</span></a>
